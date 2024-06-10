@@ -14,3 +14,6 @@ This is also from Christophe Ancey's GitHub: [Flume](https://github.com/cancey/h
 # 3. Wave modelling: [Tsunami](https://github.com/giboul/TriftGeoclaw/blob/main/Tsunami/README.md)
 
 Here, David George's [Geoclaw](https://www.clawpack.org/geoclaw) covers everything.
+
+# State of the repo
+The advancement of this work is in progress... That progress is detailes in the [TODO.mb](https://github.com/giboul/TriftGeoClaw/blob/main/TODO.md) file.
