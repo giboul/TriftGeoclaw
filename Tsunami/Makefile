@@ -62,7 +62,6 @@ all:
 	$(MAKE) clean
 	$(MAKE) new
 	$(MAKE) data
-	$(MAKE) boost
 	$(MAKE) output
 	$(MAKE) .plots
 	$(MAKE) .htmls
