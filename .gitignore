@@ -38,6 +38,7 @@
 # Output files
 *.output
 *.plots
+*.html
 _output
 _plots
 __pycache__
