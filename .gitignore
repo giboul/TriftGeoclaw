@@ -39,9 +39,12 @@
 *.output
 *.plots
 *.html
+*.pyc
 _output
 _plots
-__pycache__
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
 
 # Topography files
 *.xyz
