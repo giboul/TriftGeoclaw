@@ -1,0 +1,21 @@
+2024-06-09 19:10:22,074 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=0.0
+2024-06-09 19:10:22,588 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=1.0
+2024-06-09 19:10:23,050 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=2.0
+2024-06-09 19:10:23,517 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=3.0
+2024-06-09 19:10:23,994 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=4.0
+2024-06-09 19:10:24,460 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=5.0
+2024-06-09 19:10:24,918 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=6.0
+2024-06-09 19:10:25,381 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=7.0
+2024-06-09 19:10:25,911 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=8.0
+2024-06-09 19:10:26,374 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=9.0
+2024-06-09 19:10:26,840 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=10.0
+2024-06-09 19:10:27,298 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=11.0
+2024-06-09 19:10:27,749 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=12.0
+2024-06-09 19:10:28,208 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=13.0
+2024-06-09 19:10:28,672 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=14.0
+2024-06-09 19:10:29,146 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=15.0
+2024-06-09 19:10:29,610 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=16.0
+2024-06-09 19:10:30,157 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=17.0
+2024-06-09 19:10:30,670 pyclaw.fileio INFO CLAW: 368 - Read in solution for time t=17.879956
+2024-06-09 19:10:31,340 matplotlib.animation INFO CLAW: 1044 - Animation.save using <class 'matplotlib.animation.HTMLWriter'>
+2024-06-09 19:10:31,341 matplotlib.animation INFO CLAW: 305 - figure size in inches has been adjusted from 6.0 x 4.380434782608695 to 6.0 x 4.38
