@@ -1,3 +1,5 @@
+# Taken from cancey's [hydraulics](https://github.com/cancey/hydraulics/tree/main/Floods/Flume) repo
+
 We solve the shallow water equations.
 The geometry studied is that shown in figure 5.57 (see lecture notes, [fr.ancey.ch/cours/bachelor/cours-meca.pdf](http://fr.ancey.ch/cours/bachelor/cours-meca.pdf)) with:
 * a bed slope $i=0.2$% for the main channel (from $x=10$ m to 1000 m) and a slope $i=5$% for the entrance channel (from $x=0$ m to 10 m)
