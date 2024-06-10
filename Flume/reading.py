@@ -10,40 +10,33 @@ files = glob(f'{dir}/fort.q*')
 print(f"There are {len(files)} files in {dir}")
 
 # %%
-# Plot solution h(x, t)
 
-frame = solution.Solution(len(files)-1, path=dir, file_format='ascii')
+# Get first frame
+frame = solution.Solution(0, path=dir, file_format='ascii')
+# Get bed arrays
+x = frame.state.grid.x.centers
+s = frame.state.aux[0]
 
-x  = frame.state.grid.x.centers
-h  = frame.state.q[0]
-s  = frame.state.aux[0]
-g  = 9.81
-
-h0 = 1
-c0 = np.sqrt(g*h0)
-
-# normal depth
+# Compute normal depth (GMS)
 hn = np.full_like(x, (10/50/np.sqrt(0.002))**(2/3))
 hn[x < 10] = (10/50/np.sqrt(0.05))**(2/3)
 
-print(f'depth at x = 1000 m: h = {h[-1]:.2f} m')
-
-#true = qtrue(x,t)
+# Initialize figure
 fig, ax = plt.subplots(figsize=(5, 2.7), layout="tight")
-line, = ax.plot(x, h+s, label=rf"$ t = {frame.t}$ s")
 ax.fill_between(x, hn+s, s, alpha=0.1, label='normal depth')
 ax.fill_between(x, s, s.min(), color="k")
 ax.legend(loc='upper right')
 ax.set_xlabel(r'$x$')
 ax.set_ylabel(r'$h(x, t)$')
 
-# plt.show()
-
+# Initialize water line to plot and animate
+line, = ax.plot(x, frame.state.q[0]+s, label=rf"$ t = {frame.t}$ s")
+# Function for water line udpating
 def update(i):
     frame = solution.Solution(i, path=dir, file_format='ascii')
     h  = frame.state.q[0]
     line.set_data(x, h+s)
     fig.canvas.draw()
-
+# Animate
 anim = FuncAnimation(fig, update, frames=len(files), interval=500/len(files))
 plt.show()
