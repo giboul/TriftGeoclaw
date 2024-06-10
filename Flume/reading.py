@@ -17,7 +17,7 @@ frame = solution.Solution(0, path=dir, file_format='ascii')
 x = frame.state.grid.x.centers
 s = frame.state.aux[0]
 
-# Compute normal depth (GMS)
+# Compute normal depth (Chézy)
 hn = np.full_like(x, (10/50/np.sqrt(0.002))**(2/3))
 hn[x < 10] = (10/50/np.sqrt(0.05))**(2/3)
 
@@ -40,4 +40,5 @@ def update(i):
     fig.canvas.draw()
 # Animate
 anim = FuncAnimation(fig, update, frames=len(files), interval=500/len(files))
+# anim.save("movie.gif", fps=len(files)/5)
 plt.show()
