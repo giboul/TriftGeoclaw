@@ -47,8 +47,8 @@ cxstop  = cxstop  - xstart
 cystart = cystart - ystart
 cystop  = cystop  - ystart
 
-for k, v in dict(cxstart=cxstart, cxstop=cxstop, cystart=cystart, cystop=cystop).items():
-    print(f"{k} = {v}")
+# for k, v in dict(cxstart=cxstart, cxstop=cxstop, cystart=cystart, cystop=cystop).items():
+#     print(f"{k} = {v}")
 
 
 def gdaltranslate() -> None:
@@ -135,7 +135,7 @@ def plot(asc=False, h0=False) -> None:
 
     ax.set_aspect("equal")
     ax.legend(loc="upper left")
-    if False:
+    if True:
         file = "Topography.png"
         print(f"\tINFO: Saving {file}...", end=" ")
         fig.savefig(file, bbox_inches='tight')
@@ -149,8 +149,8 @@ def make_qinit():
     Create qinit data file
     """
     x, y, z = np.loadtxt("bathymetry.xyz").T
-    print(f"{x.min(), x.max() = }")
-    print(f"{y.min(), y.max() = }")
+    # print(f"{x.min(), x.max() = }")
+    # print(f"{y.min(), y.max() = }")
     nxpoints = np.unique(x).size
     nypoints = np.unique(y).size
     xlower = x.min()
