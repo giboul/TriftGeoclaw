@@ -40,7 +40,6 @@ include $(GEOLIB)/Makefile.geoclaw
 # ---------------------------------------
 
 EXCLUDE_MODULES = \
-  $(GEOLIB)/qinit_module.f90
 
 EXCLUDE_SOURCES = \
 
