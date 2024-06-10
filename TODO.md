@@ -14,10 +14,8 @@
 - David L. George, D-CLAW => simplement mettre un coefficient de transfert de quantité de mouvement?
 
 # Problèmes
-- GitHub/AVAC: `qinit_module.f90` est bien corrigé mais il n'est pas mentionné dans la liste des modules du Makefile. Il faudrait écrire:
+- GitHub/AVAC: `qinit_module.f90` est bien corrigé mais il n'est pas listé dan le Makefile. Il faudrait écrire:
 ```Makefile
-EXCLUDE_MODULES = \
-  $(GEOLIB)/qinit_module.f90
 MODULES = \
   ./module_voellmy.f90 \
   ./qinit_module.f90 \
