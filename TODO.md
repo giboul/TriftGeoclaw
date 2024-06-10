@@ -1,20 +1,20 @@
 # TODO
 - [x] Traiter les données de Gruner pour en tirer une topographie utilisable et assez légère pour des calculs rapides.
-- [x] Installer Clawpack correctement (5.9.0). La version 5.9.2 ne résoud pas les équations de Boussinesq et la 5.10.0 exige la libraire PETSC.
+- [x] Installer Clawpack correctement (5.9.0). La version 5.9.2 ne résout pas les équations de Boussinesq et la 5.10.0 exige la librairie PETSC.
 - [x] Simuler une première vague depuis un champ de vitesse ou de hauteur initial.
 - [x] Simuler une première avalanche avec AVAC.
 - [ ] Introduire la quantité de mouvement par les conditions de bord et non par la solution initiale.
 - [ ] Apprendre à transférer la quantité de mouvement de la neige vers l'eau (Flume).
-- [ ] Ajouter des graphes de l’intumescence au barrage (ligne de gauges).
+- [ ] Ajouter des graphes de l’intumescence au barrage (ligne de jauges).
 - [ ] Inclure le barrage dans la topographie.
 - [ ] Benchmark selon les expériences VAW+LHE (test des conditions de bord)?
 
 # Questions
 - Y a-t-il des effets d'échelle ?
-- David L. George, D-CLAW => simplement mettre un coefficent de transfer de quantité de mouvement?
+- David L. George, D-CLAW => simplement mettre un coefficient de transfert de quantité de mouvement?
 
 # Problèmes
-- GitHub/AVAC: `qinit_module.f90` est bien corrigé mais il n'est pas mentionnée dans la liste des modules du Makefile. Il faudrait écrire:
+- GitHub/AVAC: `qinit_module.f90` est bien corrigé mais il n'est pas mentionné dans la liste des modules du Makefile. Il faudrait écrire:
 ```Makefile
 EXCLUDE_MODULES = \
   $(GEOLIB)/qinit_module.f90
@@ -50,7 +50,7 @@ parallel:
 	export FFLAGS='-O2 -fopenmp'
 	export OMP_NUM_THREADS=4
 ```
-- Installtion de Clawpack: Boussinesq n'est pas inclus dans la v5.9.2, la v5.10.0 usilise PETSC pour résoudre ces equations. La version 5.9.0 est ici utilisée car j'ai surchauffé en essayant les deux dernières versions.
+- Installation de Clawpack: Boussinesq n'est pas inclus dans la v5.9.2, la v5.10.0 utilise PETSC pour résoudre ces équations. La version 5.9.0 est ici utilisée car j'ai surchauffé en essayant les deux dernières versions.
 
 # À explorer 
 - Réessayer de lancer les exemples `tsunami_benchmarks: problem1 & problem1_take2`.
