@@ -24,9 +24,13 @@ subroutine qinit(meqn,mbc,mx,xlower,dx,q,maux,aux)
     do i=1,mx
       x = xlower +(i-0.5)*dx
       q(1,i) = 0.
-      if (x >=-1000.d0 .and. x<=000.d0) then
-		  q(1,i) = 1.d0
-	  endif	  
+      if (x >=-1000 .and. x<=0) then
+         q(1,i) = 1.d0
+      else if (x >= 500 .and. 1000 > x) then
+         q(1,i) = 0.2/100*(x-500)
+      else if (x >= 1000) then
+         q(1,i) = 0.2/100*(1000-500)
+      endif	  
       q(2,i) = 0.  ! right-going
 
    enddo
