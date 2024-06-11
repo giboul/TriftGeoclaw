@@ -4,7 +4,7 @@
 - [x] Simuler une première vague depuis un champ de vitesse ou de hauteur initial.
 - [x] Simuler une première avalanche avec AVAC.
 - [ ] Introduire la quantité de mouvement par les conditions de bord et non par la solution initiale.
-- [ ] Apprendre à transférer la quantité de mouvement de la neige vers l'eau (Flume).
+- [x] Apprendre à transférer la quantité de mouvement de la neige vers l'eau (Flume).
 - [ ] Ajouter des graphes de l’intumescence au barrage (ligne de jauges).
 - [ ] Inclure le barrage dans la topographie.
 - [ ] Benchmark selon les expériences VAW+LHE (test des conditions de bord)?
