@@ -30,17 +30,17 @@ subroutine src1(meqn,mbc,mx,xlower,dx,q,maux,aux,t,dt)
     real(kind=8) :: gamma, u, tanxR
     integer :: i
 
-      if (frictioncoeff.gt.0.d0 .and. friction_forcing) then
-          ! integrate source term based on Chézy formula
-            do i=1,mx
-               if (q(1,i)<=dry_tolerance) then
-                  q(2,i) = 0.0
-               else
-                  gamma= dsqrt(q(2,i)**2)*(grav*frictioncoeff**2)/(q(1,i)**2)
-                  q(2,i)= q(2,i)/(1.d0 + dt*gamma)
-              endif
-            enddo
-        endif
+    if (frictioncoeff.gt.0.d0 .and. friction_forcing) then
+        ! integrate source term based on Chézy formula
+        do i=1,mx
+            if (q(1,i)<=dry_tolerance) then
+                q(2,i) = 0.0
+            else
+                gamma= dsqrt(q(2,i)**2)*(grav*frictioncoeff**2)/(q(1,i)**2)
+                q(2,i)= q(2,i)/(1.d0 + dt*gamma)
+            endif
+        enddo
+    endif
 
 !      ----------------------------------------------------------------
 
@@ -80,5 +80,3 @@ subroutine src1(meqn,mbc,mx,xlower,dx,q,maux,aux,t,dt)
 
 
 end subroutine src1
-
-
