@@ -41,6 +41,10 @@ Il faut encore mesurer hauteur et vitesse à l'entrée de l'avalanche.
 De plus, il en reste beaucoup d'autres à faire.
 <img src="AVAC/movie.gif"/>
 
+## Vague d'impulsion
+
+<img src="Flume/movie.gif">
+
 # Divers
 - Notes de cours sur ClawPack: là où il est écrit "or directly in the Makefile:", il faut remplacer le code par:
 ```Makefile
