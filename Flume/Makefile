@@ -72,6 +72,9 @@ include $(CLAWMAKE)
 topo:
 	$(PYTHON) make_topo.py
 
+plots:
+	$(PYTHON) reading.py
+
 all: 
 	$(MAKE) topo
 	$(MAKE) .plots
