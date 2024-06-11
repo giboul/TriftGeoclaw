@@ -71,7 +71,7 @@ def setrun(claw_pkg='geoclaw'):
     # define the mapping to the physical domain
 
     clawdata.lower[0] = 000          # xlower
-    clawdata.upper[0] = 1000.           # xupper
+    clawdata.upper[0] = 3000.           # xupper
 
     # Number of grid cells:
     clawdata.num_cells[0] = 1000
@@ -124,7 +124,7 @@ def setrun(claw_pkg='geoclaw'):
 
     clawdata.output_style = 1
     clawdata.num_output_times = 90
-    clawdata.tfinal = 900.
+    clawdata.tfinal = 500.
 
     
 
@@ -214,7 +214,7 @@ def setrun(claw_pkg='geoclaw'):
     #   3 or 'wall'     => solid wall for systems where q(2) is normal velocity
 
     clawdata.bc_lower[0] = 'user'   # at xlower
-    clawdata.bc_upper[0] = 'user'   # at xupper
+    clawdata.bc_upper[0] = 'wall'   # at xupper
 
 
     geo_data = rundata.geo_data
