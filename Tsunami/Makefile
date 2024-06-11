@@ -44,6 +44,7 @@ SOURCES = \
   $(CLAW)/riemann/src/rpn2_geoclaw.f \
   $(CLAW)/riemann/src/rpt2_geoclaw.f \
   $(CLAW)/riemann/src/geoclaw_riemann_utils.f \
+  ./bc2amr.f90
 
 #-------------------------------------------------------------------
 # Include Makefile containing standard definitions and make options:
@@ -62,6 +63,7 @@ all:
 	$(MAKE) clean
 	$(MAKE) new
 	$(MAKE) data
+	$(MAKE) topo
 	$(MAKE) output
 	$(MAKE) .plots
 	$(MAKE) .htmls

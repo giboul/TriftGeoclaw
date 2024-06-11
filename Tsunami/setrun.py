@@ -175,7 +175,7 @@ def setrun(claw_pkg='geoclaw') -> ClawRunData:
     #   1 => extrapolation (non-reflecting outflow)
     #   2 => periodic (must specify this at both boundaries)
     #   3 => solid wall for systems where q(2) is normal velocity
-    clawdata.bc_lower[0] = 'extrap'
+    clawdata.bc_lower[0] = 'user'
     clawdata.bc_upper[0] = 'extrap'
     clawdata.bc_lower[1] = 'extrap'
     clawdata.bc_upper[1] = 'extrap'
@@ -321,11 +321,18 @@ def setgeo(rundata: ClawRunData) -> ClawRunData:
 
     # == setqinit.data values ==
     # 0: nothing, 1: depth, 2: x momentum, 3: y momentum, 4: surface level
-    rundata.qinit_data.qinit_type = 2
-    rundata.qinit_data.qinitfiles = []
     # for qinit perturbations, append lines of the form: (<= 1 allowed for now!)
     #   [fname]
-    rundata.qinit_data.qinitfiles.append(['qinit.xyz'])
+    # Check if using qinit or boundary condition
+    with open("Makefile", "r") as makefile:
+        lines = [l for l in makefile.readlines() if "bc2amr.f" in l]
+    if lines and not lines[0].strip().startswith("#"):
+        print("INFO: Using the boundary conditions for momentum introduction.")
+    else:
+        print("INFO: Using the initial solution for momentum introcution.")
+        rundata.qinit_data.qinit_type = 2
+        rundata.qinit_data.qinitfiles = []
+        rundata.qinit_data.qinitfiles.append(['qinit.xyz'])
 
     # == fgout grids ==
     # new style as of v5.9.0 (old rundata.fixed_grid_data is deprecated)
