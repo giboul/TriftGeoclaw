@@ -1,12 +1,11 @@
-from glob import glob
-import numpy as np
+from pathlib import Path
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from clawpack.pyclaw import solution
 
 
 dir = '_output'
-files = glob(f'{dir}/fort.q*')
+files = list(Path(dir).glob('fort.q*'))
 print(f"There are {len(files)} files in {dir}")
 
 # Get first frame
@@ -34,7 +33,11 @@ def update(i):
     fig.canvas.flush_events()
 # Animate
 anim = FuncAnimation(fig, update, frames=len(files), interval=500/len(files))
-if False:
+if True:
     plt.show()
-else:
+elif False:
     anim.save("movie.gif", fps=len(files)/5, dpi=100)
+else:
+
+    for i, f in enumerate(files):
+        anim.save()

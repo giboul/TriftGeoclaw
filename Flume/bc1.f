@@ -67,17 +67,19 @@ c      endif
       r = ur-2.0d0*sqrt(grav*hr)
      
       do ibc=1,mbc
-          if (t < 10) then
-            aux(1,1-ibc) = aux(1,ibc)
+         aux(1,1-ibc) = aux(1,ibc)
+         if (t < 5) then
             q(1,1-ibc) = h0
             q(2,1-ibc) = q0
-          else
-            aux(1,1-ibc) = aux(1,ibc)
-            q(1,1-ibc) = MAX(0.d0, (20-t)/10*h0)
-            q(2,1-ibc) = MAX(0.d0, (20-t)/10*q0)
-          end if
+         else if (t < 10) then
+            q(1,1-ibc) = h0*(10-t)/5
+            q(2,1-ibc) = q0*(10-t)/5
+         else
+            q(1,1-ibc) = 0
+            q(2,1-ibc) = 0
+         end if
       enddo
-      
+
       go to 199
 c
   110 continue
