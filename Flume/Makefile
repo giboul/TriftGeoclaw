@@ -70,10 +70,10 @@ include $(CLAWMAKE)
 .PHONY: topo all
 
 topo:
-	$(PYTHON) make_topo.py
+	$(CLAW_PYTHON) make_topo.py
 
 plots:
-	$(PYTHON) reading.py
+	$(CLAW_PYTHON) reading.py
 
 all: 
 	$(MAKE) topo

@@ -53,10 +53,10 @@ include $(CLAWMAKE)
 # Construct the topography data
 .PHONY: topo all
 topo:
-	$(PYTHON) maketopo.py
+	$(CLAW_PYTHON) maketopo.py
 
 movie:
-	$(PYTHON) movie.py
+	$(CLAW_PYTHON) movie.py
 
 all: 
 	$(MAKE) clobber
