@@ -8,6 +8,7 @@ that will be read in by the Fortran code.
 
 import os, sys
 import numpy as np
+from make_topo import xlower, xupper
 #from clawpack.geoclaw.nonuniform_grid_tools import make_mapc2p
 
 
@@ -70,8 +71,8 @@ def setrun(claw_pkg='geoclaw'):
     # For nonuniform grid, 0 <= xc <= 1 and the file grid.data should
     # define the mapping to the physical domain
 
-    clawdata.lower[0] = 000          # xlower
-    clawdata.upper[0] = 3000.           # xupper
+    clawdata.lower[0] = xlower
+    clawdata.upper[0] = xupper
 
     # Number of grid cells:
     clawdata.num_cells[0] = 1000
@@ -123,8 +124,8 @@ def setrun(claw_pkg='geoclaw'):
     # Note that the time integration stops after the final output time.
 
     clawdata.output_style = 1
-    clawdata.num_output_times = 90
-    clawdata.tfinal = 500.
+    clawdata.num_output_times = 50
+    clawdata.tfinal = 50.
 
     
 

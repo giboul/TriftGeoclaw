@@ -49,6 +49,7 @@ __pycache__/
 # Topography files
 *.xyz
 *.asc
+*.tif
 
 # Logs
 *.log

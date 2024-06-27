@@ -1,27 +1,25 @@
-from scipy.interpolate import interp1d
-import numpy as np
-
 xlower = 0
-xupper = 3000.
+x_A    = 100.
+xupper = 400.
 
-slope1 = 0.05
-slope2 = 0.002
-slope3 = 0.
+slope = 0.05
 mx     = 1000 + 1
-x_A    = 10
-x_B    = 1000.
-z_A    = 0-slope1*x_A
-z_B    = z_A -(x_B-x_A)*slope2
+z_A    = 0-slope*x_A
 
-x = np.linspace(xlower, xupper, num=mx, endpoint=True)
-z = interp1d((xlower, x_A, x_B, xupper), (0, z_A, z_B, z_B))(x)
 
-if False:
-    from matplotlib import pyplot as plt
-    plt.fill_between(x, z, z.min()-1)
-    plt.show()
+if __name__ == "__main__":
+    import numpy as np
 
-np.savetxt(fname="topography.data",
-           X=np.vstack((x, z)).T,
-           header=f"{mx} # number of points",
-           comments="")
+    x = np.linspace(xlower, xupper, num=mx, endpoint=True)
+    z = - slope*x
+    z[x > x_A] = -slope*x_A
+
+    if False:
+        from matplotlib import pyplot as plt
+        plt.fill_between(x, z, z.min()-10)
+        plt.show()
+
+    np.savetxt(fname="topography.data",
+               X=np.vstack((x, z)).T,
+               header=f"{mx} # number of points",
+               comments="")
